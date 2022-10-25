@@ -10,7 +10,7 @@
         protected bool _penaMorte;
         protected string _nome;
 
-        public Country(int popolazione, float areaGeografica, string continente, string costituzione, string bandiera, string moneta, string linguaufficiale, float pil, bool penamorte, string name) : base(popolazione, areaGeografica, continente)
+        public Country(int popolazione, float areaGeografica, string continente, string costituzione, string bandiera, string moneta, string linguaufficiale, float pil, bool penamorte, string nome) : base(popolazione, areaGeografica, continente)
         {
             _popolazione = popolazione;
             _areaGeografica = areaGeografica;
@@ -21,7 +21,7 @@
             _linguaUfficiale = linguaufficiale;
             _pil = pil;
             _penaMorte = penamorte;
-            _nome = name;
+            _nome = nome;
         }
     }
 }

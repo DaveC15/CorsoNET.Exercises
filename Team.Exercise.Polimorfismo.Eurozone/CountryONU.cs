@@ -5,7 +5,7 @@ namespace Team.Exercise.Polimorfismo.Eurozone
     public class CountryONU : Country, ONU, CorteEuropea
     {
 
-        public CountryONU(int popolazione, float areaGeografica, string continente, string costituzione, string bandiera, string moneta, string linguaufficiale, float pil, bool penamorte, string name) : base(popolazione, areaGeografica, continente, costituzione, bandiera, moneta, linguaufficiale, pil, penamorte, name)
+        public CountryONU(int popolazione, float areaGeografica, string continente, string costituzione, string bandiera, string moneta, string linguaufficiale, float pil, bool penamorte, string nome) : base(popolazione, areaGeografica, continente, costituzione, bandiera, moneta, linguaufficiale, pil, penamorte, nome)
         {
 
         }
