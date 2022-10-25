@@ -13,9 +13,9 @@ namespace Team.Exercise.Polimorfismo.Eurozone
             CountryONU cinaCountry = new CountryONU(1400000, 9706000, "Asia", "Costituzione della Repubblica Popolare Cinese", "RossoGiallo", "Renminbi", "Cinese Mandarino", 30, true, "Cina");
 
 
-            Console.WriteLine("Italia");
-            italiaCountry.penaMorte();
-            italiaCountry.calculateSpread();
+            Console.WriteLine("Francia");
+            franciaCountry.penaMorte();
+            franciaCountry.calculateSpread();
             Console.WriteLine("*\n");
 
             Console.WriteLine("Cina");
