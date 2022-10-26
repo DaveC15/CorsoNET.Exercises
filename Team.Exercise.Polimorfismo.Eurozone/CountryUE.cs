@@ -1,8 +1,9 @@
 ﻿using System;
+using Team.Exercise.Polimorfismo.Eurozone.Interfaces;
 
 namespace Team.Exercise.Polimorfismo.Eurozone
 {
-    public class CountryUE : Country, UnioneEuropea, CorteEuropea, EuroCntralBank
+    public class CountryUE : Country, UnioneEuropea, CorteEuropea, EuroCetralBank
     {
 
         public CountryUE(int popolazione, float areaGeografica, string continente, string costituzione, string bandiera, string moneta, string linguaufficiale, float pil, bool penamorte, string nome) : base(popolazione, areaGeografica, continente, costituzione, bandiera, moneta, linguaufficiale, pil, penamorte, nome)
