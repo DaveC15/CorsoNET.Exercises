@@ -4,7 +4,7 @@
     {
         protected int _popolazione;
         protected float _areaGeografica;
-        protected string _continente;
+        public string _continente;
 
         public Territory(int popolazione, float areaGeografica, string continente)
         {
