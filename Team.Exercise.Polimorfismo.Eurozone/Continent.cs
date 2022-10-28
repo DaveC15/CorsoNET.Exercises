@@ -9,8 +9,8 @@ namespace Team.Exercise.Polimorfismo.Eurozone
 
     public class Continent
     {
-        private List<Country> _countryList;
-        private string _nome;
+        public List<Country> _countryList;
+        public string _nome;
         public Continent(string nome)
         {
             _countryList = new List<Country>();
@@ -32,5 +32,6 @@ namespace Team.Exercise.Polimorfismo.Eurozone
                 _countryList.Remove(newCountry);
             }
         }
+
     }
 }

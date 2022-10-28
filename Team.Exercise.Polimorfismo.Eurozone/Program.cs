@@ -12,6 +12,26 @@ namespace Team.Exercise.Polimorfismo.Eurozone
 
             CountryONU cinaCountry = new CountryONU(1400000, 9706000, "Asia", "Costituzione della Repubblica Popolare Cinese", "RossoGiallo", "Renminbi", "Cinese Mandarino", 30, true, "Cina");
 
+            Continent Europa = new Continent("Europa");
+
+            City Torino = new City("Torino", italiaCountry);
+            City Parigi = new City("Parigi", franciaCountry);
+
+            Citizen Davide = new Citizen("Davide","Rossi", Torino);
+            Citizen Paul = new Citizen("Paul", "Goustau", Parigi);
+
+            italiaCountry._citiesList.ForEach(PrintCity);
+            Console.WriteLine("\n");
+
+            Torino._citizenList.ForEach(PrintCitizen);
+            Console.WriteLine("\n");
+
+            Europa.addCountry(italiaCountry);
+            Europa.addCountry(franciaCountry);
+            Europa.addCountry(germaniaCountry);
+            Console.WriteLine("Il continente " + Europa._nome + " contiene questi paesi:");
+            Europa._countryList.ForEach(PrintCountry);
+            Console.WriteLine("\n");
 
             Console.WriteLine("Francia");
             franciaCountry.penaMorte();
@@ -22,6 +42,18 @@ namespace Team.Exercise.Polimorfismo.Eurozone
             cinaCountry.penaMorte();
             Console.WriteLine("*\n");
 
+        }
+        static void PrintCountry(Country c)
+        {
+            Console.WriteLine(c._nome);
+        }
+        static void PrintCitizen(Citizen c)
+        {
+            Console.WriteLine(c._nome);
+        }
+        static void PrintCity(City c)
+        {
+            Console.WriteLine(c._nome);
         }
     }
 

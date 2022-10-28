@@ -8,15 +8,14 @@ namespace Team.Exercise.Polimorfismo.Eurozone
 {
     public class City
     {
-        private string _nome;
+        public string _nome;
         public List<Citizen> _citizenList;
-        public string _myCountry;
         Country _country;
-        public City(string nome, string mycountry, Country country)
+        public City(string nome, Country country)
         {
             _nome = nome;
-            _myCountry = mycountry;
             _country = country;
+            _citizenList = new List<Citizen>();
             _country.addCity(this);
         }
 
