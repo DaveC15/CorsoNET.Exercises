@@ -12,7 +12,7 @@ namespace Team.Exercise.Polimorfismo.Eurozone
         protected bool _penaMorte;
         public string _nome;
 
-        public List<City> _citiesList;
+        public List<City> _citiesList = new List<City>();
 
         public Country(int popolazione, float areaGeografica, string continente, string costituzione, string bandiera, string moneta, string linguaufficiale, float pil, bool penamorte, string nome) : base(popolazione, areaGeografica, continente)
         {
@@ -26,7 +26,6 @@ namespace Team.Exercise.Polimorfismo.Eurozone
             _pil = pil;
             _penaMorte = penamorte;
             _nome = nome;
-            _citiesList = new List<City>();
         }
 
         public void addCity(City newcity)

@@ -9,13 +9,12 @@ namespace Team.Exercise.Polimorfismo.Eurozone
     public class City
     {
         public string _nome;
-        public List<Citizen> _citizenList;
+        public List<Citizen> _citizenList = new List<Citizen>();
         Country _country;
         public City(string nome, Country country)
         {
             _nome = nome;
             _country = country;
-            _citizenList = new List<Citizen>();
             _country.addCity(this);
         }
 
