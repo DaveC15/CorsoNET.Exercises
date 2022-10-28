@@ -29,20 +29,20 @@ namespace Team.Exercise.Polimorfismo.Eurozone
             _citiesList = new List<City>();
         }
 
-        public void addCity(City newCity)
+        public void addCity(City newcity)
         {
-            if (_citiesList.IndexOf(newCity) == -1)
+            if (_citiesList.IndexOf(newcity) == -1)
             {
-                _citiesList.Add(newCity);
+                _citiesList.Add(newcity);
             }
         }
 
-        public void removeCity(City newCity, Country newCountry)
+        public void removeCity(City newcity)
         {
-            if (_citiesList.IndexOf(newCity) != -1)
+            if (_citiesList.IndexOf(newcity) != -1)
             {
-                _citiesList.Remove(newCity);
-                newCountry.addCity(newCity);
+                _citiesList.Remove(newcity);
+                
             }
 
         }

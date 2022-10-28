@@ -11,26 +11,43 @@ namespace Team.Exercise.Polimorfismo.Eurozone
         private string _nome;
         public List<Citizen> _citizenList;
         public string _myCountry;
-        public City(string nome, string mycountry)
+        Country _country;
+        public City(string nome, string mycountry, Country country)
         {
             _nome = nome;
             _myCountry = mycountry;
+            _country = country;
+            _country.addCity(this);
         }
-        
-        public void addCitizen(Citizen newCitizen)
+
+        void RemoveCountry()
         {
-            if (_citizenList.IndexOf(newCitizen) == -1)
+            _country.removeCity(this);
+            _country = null;
+
+
+        }
+
+        public void UpdateCountry(Country newcountry)
+        {
+            RemoveCountry();
+            _country = newcountry;
+            _country.addCity(this);
+        }
+
+        public void addCitizen(Citizen newcitizen)
+        {
+            if (_citizenList.IndexOf(newcitizen) == -1)
             {
-                _citizenList.Add(newCitizen);
+                _citizenList.Add(newcitizen);
             }
         }
 
-        public void removeCitizen(Citizen newCitizen, City newCity)
+        public void removeCitizen(Citizen newcitizen)
         {
-            if (_citizenList.IndexOf(newCitizen) != -1)
+            if (_citizenList.IndexOf(newcitizen) != -1)
             {
-                _citizenList.Remove(newCitizen);
-                newCity.addCitizen(newCitizen);
+                _citizenList.Remove(newcitizen);
             }
             
         }
