@@ -10,14 +10,12 @@ namespace Team.Exercise.Polimorfismo.Eurozone
     {
         public string _nome;
         public string _cognome;
-        public string _city;
         City _city1;
 
-        public Citizen(string nome, string cognome, string city, City city1)
+        public Citizen(string nome, string cognome, City city1)
         {
             _nome = nome;
-            _cognome = cognome; 
-            _city = city;
+            _cognome = cognome;
             _city1 = city1;
             _city1.addCitizen(this);
         }
