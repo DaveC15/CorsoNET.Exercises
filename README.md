@@ -37,19 +37,26 @@ Esercizi svolti usando C# .NET 5.0
     class City{
         + Nome
         + List~Citizen~ CitizenList
+        + List~Citizen~ comunecitizenList
         - Country
+        + TimeSpan aperturaComune
         + massimoabitanti
         - RemoveCountry()
         + UpdateCountry(Country)
         + addCitizen(Citizen)
         + removeCitizen(Citizen)
+        + IscriviaComune(Citizen)
     }
     class Citizen{
         + Nome
         + Cognome
         - City
+        + DateTime date
+        - ismaggiorenne : bool
         - RemoveCity()
         + UpdateCity(City)
+        + InserisciData()
+        + Apertura(City)
     }
     class CorteEuropea{
         <<Interface>>
