@@ -11,6 +11,7 @@ namespace Team.Exercise.Polimorfismo.Eurozone
         public string _nome;
         public string _cognome;
         public DateTime _date;
+        bool ismaggiorenne;
         City _city1;
 
         public Citizen(string nome, string cognome, City city1)
@@ -25,6 +26,7 @@ namespace Team.Exercise.Polimorfismo.Eurozone
             
             if (y >= 18) 
             {
+                ismaggiorenne = true;
                 _city1.IscriviaComune(this);
                 
             }
