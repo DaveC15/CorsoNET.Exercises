@@ -9,12 +9,14 @@ namespace Team.Exercise.Polimorfismo.Eurozone
     public class City
     {
         public string _nome;
+        public int _massimoabitanti;
         public List<Citizen> _citizenList = new List<Citizen>();
         Country _country;
-        public City(string nome, Country country)
+        public City(string nome, Country country, int massimoabitanti)
         {
             _nome = nome;
             _country = country;
+            _massimoabitanti = massimoabitanti;
             _country.addCity(this);
         }
 
@@ -35,9 +37,15 @@ namespace Team.Exercise.Polimorfismo.Eurozone
 
         public void addCitizen(Citizen newcitizen)
         {
-            if (_citizenList.IndexOf(newcitizen) == -1)
+            if (_citizenList.IndexOf(newcitizen) == -1 && _citizenList.Count < _massimoabitanti)
             {
                 _citizenList.Add(newcitizen);
+                Console.WriteLine("Cittadini attuali: " + _citizenList.Count);
+                Console.WriteLine("Cittadini rimanenti: " + (_massimoabitanti- _citizenList.Count));
+            }
+            else
+            {
+                Console.WriteLine("Cittadini eccedono capacità città o il cittadino è già presente");
             }
         }
 

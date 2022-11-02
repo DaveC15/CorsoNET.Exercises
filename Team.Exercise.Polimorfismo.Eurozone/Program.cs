@@ -14,10 +14,12 @@ namespace Team.Exercise.Polimorfismo.Eurozone
 
             Continent Europa = new Continent("Europa");
 
-            City Torino = new City("Torino", italiaCountry);
-            City Parigi = new City("Parigi", franciaCountry);
+            City Torino = new City("Torino", italiaCountry, 2);
+            City Parigi = new City("Parigi", franciaCountry, 5);
 
             Citizen Davide = new Citizen("Davide","Rossi", Torino);
+            Citizen Ross = new Citizen("Ross", "Perla", Torino);
+            Citizen Mer = new Citizen("Mer", "Red", Torino);
             Citizen Paul = new Citizen("Paul", "Goustau", Parigi);
 
             italiaCountry._citiesList.ForEach(PrintCity);
