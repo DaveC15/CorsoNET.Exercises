@@ -10,6 +10,7 @@ namespace Team.Exercise.Polimorfismo.Eurozone
     {
         public string _nome;
         public string _cognome;
+        public DateTime _date;
         City _city1;
 
         public Citizen(string nome, string cognome, City city1)
@@ -18,6 +19,20 @@ namespace Team.Exercise.Polimorfismo.Eurozone
             _cognome = cognome;
             _city1 = city1;
             _city1.addCitizen(this);
+            InserisciData();
+            DateTime c = DateTime.Now;
+            int y = c.Year - _date.Year;
+            
+            if (y >= 18) 
+            {
+                _city1.IscriviaComune(this);
+                
+            }
+            else
+            {
+                Console.WriteLine("Cittadino non aggiunto al comune in quanto minorenne");
+            }
+            
         }
 
         void RemoveCity()
@@ -33,6 +48,22 @@ namespace Team.Exercise.Polimorfismo.Eurozone
             RemoveCity();
             _city1 = newcity;
             _city1.addCitizen(this);
+        }
+
+        public void InserisciData()
+        {
+            Console.WriteLine("Inserire la tua data di Nascita: ");
+            string input = Console.ReadLine();
+
+            if (DateTime.TryParse(input, out _date))
+            {
+                Console.WriteLine($" - Data di nascita: {_date}");
+            }
+            else
+            {
+                Console.WriteLine($" - Data di nascita non corretta ");
+
+            }
         }
     }
 }
