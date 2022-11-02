@@ -67,5 +67,56 @@ namespace Team.Exercise.Polimorfismo.Eurozone
 
             }
         }
+
+        public void Apertura(City city)
+        {
+            DateTime dateTime;
+            if (city._country._nome == "Portogallo" || city._country._nome == "Inghilterra")
+            {
+                dateTime = TimeZoneInfo.ConvertTimeBySystemTimeZoneId(DateTime.Now, TimeZoneInfo.Local.Id, "GMT Standard Time");
+                if (dateTime.Hour >= city._aperturaComune.Hours && dateTime.Hour <= 18)
+                {
+                    Console.WriteLine("Il comune è aperto");
+                }
+                else
+                {
+                    TimeSpan r = new TimeSpan(0, 12, 0, 0);
+                    TimeSpan p = new TimeSpan(0, dateTime.Hour, dateTime.Minute, dateTime.Second);
+                    Console.WriteLine($"Mancano {-(r - (city._aperturaComune - (r + p)))} ore all'apertura in {city._nome}");
+                }
+                
+                
+            }
+            else if (city._country._nome == "Italia" || city._country._nome == "Francia" || city._country._nome == "Germania")
+            {
+                dateTime = DateTime.Now;
+                if (dateTime.Hour >= city._aperturaComune.Hours && dateTime.Hour <= 18)
+                {
+                    Console.WriteLine("Il comune è aperto");
+                }
+                else
+                {
+                    TimeSpan r = new TimeSpan(-1,12, 0, 0);
+                    TimeSpan p = new TimeSpan(0, dateTime.Hour, dateTime.Minute, dateTime.Second);
+                    
+                    Console.WriteLine($"Mancano {-(r - (city._aperturaComune - (r + p)))} ore all'apertura in {city._nome}");
+                }
+                
+            }
+            else
+            {
+                dateTime = TimeZoneInfo.ConvertTimeBySystemTimeZoneId(DateTime.Now, TimeZoneInfo.Local.Id, "GTB Standard Time");
+                if (dateTime.Hour >= city._aperturaComune.Hours && dateTime.Hour <= 18)
+                {
+                    Console.WriteLine("Il comune è aperto");
+                }
+                else
+                {
+                    TimeSpan r = new TimeSpan(0, 12, 0, 0);
+                    TimeSpan p = new TimeSpan(0, dateTime.Hour, dateTime.Minute, dateTime.Second);
+                    Console.WriteLine($"Mancano {-(r - (city._aperturaComune - (r + p)))} ore all'apertura in {city._nome}");
+                }
+            }
+        }
     }
 }

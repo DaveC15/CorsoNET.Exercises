@@ -12,7 +12,9 @@ namespace Team.Exercise.Polimorfismo.Eurozone
         public int _massimoabitanti;
         public List<Citizen> _citizenList = new List<Citizen>();
         public List<Citizen> _comunecitizenList = new List<Citizen>();
-        Country _country;
+        public Country _country;
+        public TimeSpan _aperturaComune = new TimeSpan(0, 09, 0, 0);
+        
         public City(string nome, Country country, int massimoabitanti)
         {
             _nome = nome;
