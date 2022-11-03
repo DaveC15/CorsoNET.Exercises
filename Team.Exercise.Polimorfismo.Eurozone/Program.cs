@@ -9,7 +9,8 @@ namespace Team.Exercise.Polimorfismo.Eurozone
             CountryEU_ONU italiaCountry = new CountryEU_ONU(60000, 324000, "Europa", "Costituzione Italiana", "VerdeBiancoRosso", "Euro", "Italiano", 100, false, "Italia");
             CountryEU_ONU franciaCountry = new CountryEU_ONU(67000, 675000, "Europa", "Costituzione Francese", "BluBiancoRosso", "Euro", "Francese", 150, false, "Francia");
             CountryEU_ONU germaniaCountry = new CountryEU_ONU(83000, 357000, "Europa", "Legge Fondamentale Tedesca", "NeroRossoGiallo", "Euro", "Tedesco", 200, false, "Germania");
-            CountryEU_ONU PortogalloCountry = new CountryEU_ONU(83000, 357000, "Europa", "Legge Fondamentale Tedesca", "NeroRossoGiallo", "Euro", "Tedesco", 200, false, "Portogallo");
+            CountryEU_ONU PortogalloCountry = new CountryEU_ONU(83000, 357000, "Europa", "Costituzione del Portogallo", "VerdeGialloRosso", "Euro", "Portoghese", 200, false, "Portogallo");
+            CountryEU_ONU GreciaCountry = new CountryEU_ONU(83000, 357000, "Europa", "Costituzione della Grecia", "BluBianco", "Euro", "Greco", 200, false, "Grecia");
 
             CountryONU cinaCountry = new CountryONU(1400000, 9706000, "Asia", "Costituzione della Repubblica Popolare Cinese", "RossoGiallo", "Renminbi", "Cinese Mandarino", 30, true, "Cina");
 
@@ -17,11 +18,13 @@ namespace Team.Exercise.Polimorfismo.Eurozone
 
             City Torino = new City("Torino", italiaCountry, 2);
             City Parigi = new City("Parigi", franciaCountry, 5);
-            City Red = new City("Red", PortogalloCountry, 8);
+            City Lisbona = new City("Lisbona", PortogalloCountry, 8);
+            City Atene = new City("Atene", GreciaCountry, 2);
 
             Citizen Davide = new Citizen("Davide","Rossi", Torino);
-            Citizen Luca = new Citizen("Luca", "Verdi", Red);
-            /*Citizen Ross = new Citizen("Ross", "Perla", Torino);
+            /*Citizen Luca = new Citizen("Luca", "Verdi", Lisbona);
+            Citizen Mario = new Citizen("Mario", "Porti", Atene);
+            Citizen Ross = new Citizen("Ross", "Perla", Torino);
             Citizen Mer = new Citizen("Mer", "Red", Torino);
             Citizen Paul = new Citizen("Paul", "Goustau", Parigi);*/
 
@@ -48,7 +51,8 @@ namespace Team.Exercise.Polimorfismo.Eurozone
             Console.WriteLine("*\n");
 
             Davide.Apertura(Torino);
-            Luca.Apertura(Red);
+            Davide.Apertura(Lisbona);
+            Davide.Apertura(Atene);
 
         }
         static void PrintCountry(Country c)

@@ -80,9 +80,9 @@ namespace Team.Exercise.Polimorfismo.Eurozone
                 }
                 else
                 {
-                    TimeSpan r = new TimeSpan(0, 12, 0, 0);
+                    TimeSpan r = new TimeSpan(-1, 12, 0, 0);
                     TimeSpan p = new TimeSpan(0, dateTime.Hour, dateTime.Minute, dateTime.Second);
-                    Console.WriteLine($"Mancano {-(r - (city._aperturaComune - (r + p)))} ore all'apertura in {city._nome}");
+                    Console.WriteLine($"Mancano {(-(r - (city._aperturaComune - (r + p)))).ToString(@"hh\:mm\:ss")} ore all'apertura del Comune di {city._nome}");
                 }
                 
                 
@@ -99,7 +99,7 @@ namespace Team.Exercise.Polimorfismo.Eurozone
                     TimeSpan r = new TimeSpan(-1,12, 0, 0);
                     TimeSpan p = new TimeSpan(0, dateTime.Hour, dateTime.Minute, dateTime.Second);
                     
-                    Console.WriteLine($"Mancano {-(r - (city._aperturaComune - (r + p)))} ore all'apertura in {city._nome}");
+                    Console.WriteLine($"Mancano {(-(r - (city._aperturaComune - (r + p)))).ToString(@"hh\:mm\:ss")} ore all'apertura del Comune di {city._nome}");
                 }
                 
             }
@@ -112,9 +112,9 @@ namespace Team.Exercise.Polimorfismo.Eurozone
                 }
                 else
                 {
-                    TimeSpan r = new TimeSpan(0, 12, 0, 0);
+                    TimeSpan r = new TimeSpan(-1, 12, 0, 0);
                     TimeSpan p = new TimeSpan(0, dateTime.Hour, dateTime.Minute, dateTime.Second);
-                    Console.WriteLine($"Mancano {-(r - (city._aperturaComune - (r + p)))} ore all'apertura in {city._nome}");
+                    Console.WriteLine($"Mancano {(-(r - (city._aperturaComune - (r + p)))).ToString(@"hh\:mm\:ss")} ore all'apertura del Comune di {city._nome}");
                 }
             }
         }
