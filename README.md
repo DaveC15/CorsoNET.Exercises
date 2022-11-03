@@ -2,7 +2,7 @@
 
 Esercizi svolti usando C# .NET 5.0
 
-## Esercizio Team.Exercise.Polimorfismo.Eurozone
+## Esercizio Team.Exercise.Polimorfismo.Eurozone UML
 
 ``` mermaid
     classDiagram
