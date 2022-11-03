@@ -2,10 +2,21 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": "Team.Exercise.AccessModifier.Streaming",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build1",
+            "program": "${workspaceFolder}/Team.Exercise.AccessModifier.Streaming/bin/Debug/net5.0/Team.Exercise.AccessModifier.Streaming.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}",
+            "stopAtEntry": false,
+            "console": "integratedTerminal"
+        },
+        {
             // Use IntelliSense to find out which attributes exist for C# debugging
             // Use hover for the description of the existing attributes
             // For further information visit https://github.com/OmniSharp/omnisharp-vscode/blob/master/debugger-launchjson.md
-            "name": ".NET Core Launch (console)",
+            "name": "Team.Exercise.Polimorfismo.Eurozone",
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "build",
