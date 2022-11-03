@@ -13,7 +13,7 @@ namespace Team.Exercise.Polimorfismo.Eurozone
         public List<Citizen> _citizenList = new List<Citizen>();
         public List<Citizen> _comunecitizenList = new List<Citizen>();
         public Country _country;
-        public TimeSpan _aperturaComune = new TimeSpan(0, 09, 0, 0);
+        public TimeSpan _aperturaComune = new TimeSpan(09, 0, 0);
         
         public City(string nome, Country country, int massimoabitanti)
         {
@@ -67,6 +67,14 @@ namespace Team.Exercise.Polimorfismo.Eurozone
             {
                 _comunecitizenList.Add(newcitizen);
             }
+        }
+        public void removedaCoumune(Citizen newcitizen)
+        {
+            if (_comunecitizenList.IndexOf(newcitizen) != -1)
+            {
+                _comunecitizenList.Remove(newcitizen);
+            }
+
         }
     }
 }

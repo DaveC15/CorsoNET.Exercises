@@ -11,7 +11,7 @@ namespace Team.Exercise.Polimorfismo.Eurozone
         public string _nome;
         public string _cognome;
         public DateTime _date;
-        bool ismaggiorenne;
+        public bool ismaggiorenne;
         City _city1;
 
         public Citizen(string nome, string cognome, City city1)
@@ -30,19 +30,17 @@ namespace Team.Exercise.Polimorfismo.Eurozone
                 _city1.IscriviaComune(this);
                 
             }
-            else
-            {
-                Console.WriteLine("Cittadino non aggiunto al comune in quanto minorenne");
-            }
-            
+
         }
 
         void RemoveCity()
         {
             _city1.removeCitizen(this);
             _city1 = null;
-            
-            
+            if (ismaggiorenne)
+            {
+                _city1.removedaCoumune(this);
+            }
         }
 
         public void UpdateCity(City newcity)
@@ -50,6 +48,10 @@ namespace Team.Exercise.Polimorfismo.Eurozone
             RemoveCity();
             _city1 = newcity;
             _city1.addCitizen(this);
+            if (ismaggiorenne)
+            {
+                _city1.removedaCoumune(this);
+            }
         }
 
         public void InserisciData()
@@ -68,6 +70,8 @@ namespace Team.Exercise.Polimorfismo.Eurozone
             }
         }
 
+        
+
         public void Apertura(City city)
         {
             DateTime dateTime;
@@ -76,12 +80,12 @@ namespace Team.Exercise.Polimorfismo.Eurozone
                 dateTime = TimeZoneInfo.ConvertTimeBySystemTimeZoneId(DateTime.Now, TimeZoneInfo.Local.Id, "GMT Standard Time");
                 if (dateTime.Hour >= city._aperturaComune.Hours && dateTime.Hour <= 18)
                 {
-                    Console.WriteLine("Il comune è aperto");
+                    Console.WriteLine($"Il comune è aperto a {city._nome}");
                 }
                 else
                 {
                     TimeSpan r = new TimeSpan(-1, 12, 0, 0);
-                    TimeSpan p = new TimeSpan(0, dateTime.Hour, dateTime.Minute, dateTime.Second);
+                    TimeSpan p = new TimeSpan(dateTime.Hour, dateTime.Minute, dateTime.Second);
                     Console.WriteLine($"Mancano {(-(r - (city._aperturaComune - (r + p)))).ToString(@"hh\:mm\:ss")} ore all'apertura del Comune di {city._nome}");
                 }
                 
@@ -92,12 +96,12 @@ namespace Team.Exercise.Polimorfismo.Eurozone
                 dateTime = DateTime.Now;
                 if (dateTime.Hour >= city._aperturaComune.Hours && dateTime.Hour <= 18)
                 {
-                    Console.WriteLine("Il comune è aperto");
+                    Console.WriteLine($"Il comune è aperto a {city._nome}");
                 }
                 else
                 {
                     TimeSpan r = new TimeSpan(-1,12, 0, 0);
-                    TimeSpan p = new TimeSpan(0, dateTime.Hour, dateTime.Minute, dateTime.Second);
+                    TimeSpan p = new TimeSpan(dateTime.Hour, dateTime.Minute, dateTime.Second);
                     
                     Console.WriteLine($"Mancano {(-(r - (city._aperturaComune - (r + p)))).ToString(@"hh\:mm\:ss")} ore all'apertura del Comune di {city._nome}");
                 }
@@ -108,12 +112,12 @@ namespace Team.Exercise.Polimorfismo.Eurozone
                 dateTime = TimeZoneInfo.ConvertTimeBySystemTimeZoneId(DateTime.Now, TimeZoneInfo.Local.Id, "GTB Standard Time");
                 if (dateTime.Hour >= city._aperturaComune.Hours && dateTime.Hour <= 18)
                 {
-                    Console.WriteLine("Il comune è aperto");
+                    Console.WriteLine($"Il comune è aperto a {city._nome}");
                 }
                 else
                 {
                     TimeSpan r = new TimeSpan(-1, 12, 0, 0);
-                    TimeSpan p = new TimeSpan(0, dateTime.Hour, dateTime.Minute, dateTime.Second);
+                    TimeSpan p = new TimeSpan(dateTime.Hour, dateTime.Minute, dateTime.Second);
                     Console.WriteLine($"Mancano {(-(r - (city._aperturaComune - (r + p)))).ToString(@"hh\:mm\:ss")} ore all'apertura del Comune di {city._nome}");
                 }
             }

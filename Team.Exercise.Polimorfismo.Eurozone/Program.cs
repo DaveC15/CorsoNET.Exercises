@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 
 namespace Team.Exercise.Polimorfismo.Eurozone
 {
@@ -48,6 +49,9 @@ namespace Team.Exercise.Polimorfismo.Eurozone
 
             Console.WriteLine("Cina");
             cinaCountry.penaMorte();
+            Console.WriteLine("*\n");
+
+            Console.WriteLine($"La data di nascita di {Davide._nome} è {Davide._date.ToString("D")}");
             Console.WriteLine("*\n");
 
             Davide.Apertura(Torino);
