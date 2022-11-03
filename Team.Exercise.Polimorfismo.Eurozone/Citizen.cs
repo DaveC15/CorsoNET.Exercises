@@ -72,7 +72,7 @@ namespace Team.Exercise.Polimorfismo.Eurozone
             DateTime dateTime;
             if (city._country._nome == "Portogallo" || city._country._nome == "Inghilterra")
             {
-                dateTime = TimeZoneInfo.ConvertTimeBySystemTimeZoneId(DateTime.Now, TimeZoneInfo.Local.Id, "GMT Standard Time");
+                dateTime = TimeZoneInfo.ConvertTimeBySystemTimeZoneId(DateTime.Now, TimeZoneInfo.Local.Id, "GMT Standard Time"); //"Europe/London" For Linux like system
                 if (dateTime.Hour >= city._aperturaComune.Hours && dateTime.Hour <= 18)
                 {
                     Console.WriteLine($"Il comune è aperto a {city._nome}");
@@ -88,7 +88,7 @@ namespace Team.Exercise.Polimorfismo.Eurozone
             }
             else if (city._country._nome == "Italia" || city._country._nome == "Francia" || city._country._nome == "Germania")
             {
-                dateTime = TimeZoneInfo.ConvertTimeBySystemTimeZoneId(DateTime.Now, TimeZoneInfo.Local.Id, "Central Europe Standard Time");
+                dateTime = TimeZoneInfo.ConvertTimeBySystemTimeZoneId(DateTime.Now, TimeZoneInfo.Local.Id, "Central Europe Standard Time"); //"Europe/Rome" For Linux like system
                 if (dateTime.Hour >= city._aperturaComune.Hours && dateTime.Hour <= 18)
                 {
                     Console.WriteLine($"Il comune è aperto a {city._nome}");
@@ -104,7 +104,7 @@ namespace Team.Exercise.Polimorfismo.Eurozone
             }
             else
             {
-                dateTime = TimeZoneInfo.ConvertTimeBySystemTimeZoneId(DateTime.Now, TimeZoneInfo.Local.Id, "GTB Standard Time");
+                dateTime = TimeZoneInfo.ConvertTimeBySystemTimeZoneId(DateTime.Now, TimeZoneInfo.Local.Id, "GTB Standard Time"); //"Europe/Athens" For Linux like system
                 if (dateTime.Hour >= city._aperturaComune.Hours && dateTime.Hour <= 18)
                 {
                     Console.WriteLine($"Il comune è aperto a {city._nome}");
