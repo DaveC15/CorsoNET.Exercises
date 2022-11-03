@@ -46,6 +46,7 @@ Esercizi svolti usando C# .NET 5.0
         + addCitizen(Citizen)
         + removeCitizen(Citizen)
         + IscriviaComune(Citizen)
+        + removedaCoumune(Citizen)
     }
     class Citizen{
         + Nome
