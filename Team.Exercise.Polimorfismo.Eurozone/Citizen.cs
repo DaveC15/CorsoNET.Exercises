@@ -59,14 +59,9 @@ namespace Team.Exercise.Polimorfismo.Eurozone
             Console.WriteLine("Inserire la tua data di Nascita: ");
             string input = Console.ReadLine();
 
-            if (DateTime.TryParse(input, out _date))
-            {
-                Console.WriteLine($" - Data di nascita: {_date}");
-            }
-            else
+            if (DateTime.TryParse(input, out _date) == false)
             {
                 Console.WriteLine($" - Data di nascita non corretta ");
-
             }
         }
 
@@ -93,7 +88,7 @@ namespace Team.Exercise.Polimorfismo.Eurozone
             }
             else if (city._country._nome == "Italia" || city._country._nome == "Francia" || city._country._nome == "Germania")
             {
-                dateTime = DateTime.Now;
+                dateTime = TimeZoneInfo.ConvertTimeBySystemTimeZoneId(DateTime.Now, TimeZoneInfo.Local.Id, "Central Europe Standard Time");
                 if (dateTime.Hour >= city._aperturaComune.Hours && dateTime.Hour <= 18)
                 {
                     Console.WriteLine($"Il comune è aperto a {city._nome}");
