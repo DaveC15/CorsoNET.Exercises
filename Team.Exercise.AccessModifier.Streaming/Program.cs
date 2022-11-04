@@ -32,7 +32,7 @@ namespace Team.Exercise.AccessModifier.Streaming
             _elapsedSeconds = 0;
         }
 
-        /*public void AddSong(string songName, int songDuration)
+        public void AddSong(string songName, int songDuration)
         {
             Song newSong = new Song(songName, songDuration);
 
@@ -46,7 +46,7 @@ namespace Team.Exercise.AccessModifier.Streaming
 
             if (_apptracks.IndexOf(newSong) != -1)
                 _apptracks.Remove(newSong);
-        }*/
+        }
 
         protected class Song
         {
@@ -194,16 +194,6 @@ namespace Team.Exercise.AccessModifier.Streaming
         public App(string appName) :base(appName)
         {
             appUsers = new List<User>();
-            Song a = new Song("a", 1);
-            Song b = new Song("b", 2);
-            Song c = new Song("c", 3);
-            Song d = new Song("d", 4);
-            Song e = new Song("e", 1);
-            _apptracks.Add(a);
-            _apptracks.Add(b);
-            _apptracks.Add(c);
-            _apptracks.Add(d);
-            _apptracks.Add(e);
         }
 
         protected sealed override bool AccessVerified(User user_login)
