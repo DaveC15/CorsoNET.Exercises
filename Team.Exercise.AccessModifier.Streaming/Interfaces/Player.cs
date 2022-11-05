@@ -2,11 +2,11 @@
 {
     interface Player
     {
-        void Play();
+        bool Play();
         void Stop();
         void Pause();
         void Rate();
-        void Foreward();
+        void Forward();
         void Backward();
     }
 }

@@ -10,7 +10,7 @@
             "args": [],
             "cwd": "${workspaceFolder}",
             "stopAtEntry": false,
-            "console": "externalTerminal"
+            "console": "integratedTerminal"
         },
         {
             // Use IntelliSense to find out which attributes exist for C# debugging
@@ -25,7 +25,7 @@
             "args": [],
             "cwd": "${workspaceFolder}/Team.Exercise.Polimorfismo.Eurozone",
             // For more information about the 'console' field, see https://aka.ms/VSCode-CS-LaunchJson-Console
-            "console": "externalTerminal",
+            "console": "integratedTerminal",
             "stopAtEntry": false
         },
         {

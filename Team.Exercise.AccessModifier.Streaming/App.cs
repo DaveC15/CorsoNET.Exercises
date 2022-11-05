@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Reflection.Metadata;
 
 namespace Team.Exercise.AccessModifier.Streaming
 {
@@ -7,25 +8,63 @@ namespace Team.Exercise.AccessModifier.Streaming
     {
         private List<User> appUsers;
         private User appLogUser;
-        public App(string appName) :base(appName)
+        public App(string appName) : base(appName)
         {
             appUsers = new List<User>();
-            Song a = new Song("a",2);
-            Song b = new Song("b", 2);
+            Song a = new Song("Peace of Mind", 2);
+            Song b = new Song("Smell Like Teen Spirit", 2);
+            Song c = new Song("Runaway Train", 2);
+            Song d = new Song("Chlorin", 2);
             _apptracks.Add(a);
             _apptracks.Add(b);
+            _apptracks.Add(c);
+            _apptracks.Add(d);
         }
 
+        public bool SetStreamingSong(int index)
+        {
+            if (_streamingsong != _apptracks[index])
+            {
+                _streamingsong = _apptracks[index];
+                return true;
+            }
+            else return false;
+        }
         protected sealed override bool AccessVerified(User user_login)
         {
-            if (appUsers.IndexOf(user_login) != -1)
+            for (int i = 0; i < appUsers.Capacity; i++)
             {
-                return false;
+                if (user_login.Username == appUsers[i].Username && user_login.Password == appUsers[i].Password)
+                {
+                    return true;
+                }
             }
-            else return true;
+
+            return false;
         }
 
-        public bool LogIn()
+
+        public bool Registration()
+        {
+            Console.WriteLine("Username: ");
+            string username = Console.ReadLine();
+            Console.WriteLine("Password: ");
+            string password = Console.ReadLine();
+
+            User user_registration = new User(username, password);
+            if (appUsers.IndexOf(user_registration) == -1)
+            {
+                appUsers.Add(user_registration);
+                return true;
+            }
+            else
+            {
+                Console.WriteLine("User already added");
+                return false;
+            }
+
+        }
+        public void LogIn()
         {
             Console.WriteLine("Username: ");
             string username = Console.ReadLine();
@@ -37,13 +76,14 @@ namespace Team.Exercise.AccessModifier.Streaming
             if (AccessVerified(user_login))
             {
                 appLogUser = user_login;
-                return true;
+                Console.WriteLine("You are Logged In");
+
             }
             else
             {
-                Console.ReadKey();
-                Console.Clear();
-                return false;
+                Console.WriteLine("User not found please register");
+                Registration();
+
             }
         }
     }

@@ -74,21 +74,18 @@ namespace Team.Exercise.AccessModifier.Streaming
             _elapsedSeconds = 0;
         }
 
-        public void Play()
+        public bool Play()
         {
-            
+
             if (_streamingsong != null)
             {
                 _streamingsong.Status = SongStatus.Play;
                 Console.WriteLine(_streamingsong.Name);
                 _streamingtimer.Start();
                 startTimer();
+                return true;
             }
-            else
-            {
-                _streamingsong = _apptracks[0];
-                Play();
-            }
+            return false;
         }
 
         public void Stop()
@@ -125,15 +122,29 @@ namespace Team.Exercise.AccessModifier.Streaming
                     Console.WriteLine("Vote this Song (1/5): ");
                     catchvalue = Int32.TryParse(Console.ReadLine(), out newrate);
                 }
-
-                if (_ratedsongs[_streamingsong] != 0)
+                if (_ratedsongs.ContainsKey(_streamingsong))
                 {
-                    _ratedsongs[_streamingsong] = (_streamingsong.Rate + newrate) / 2;
+                    if (_ratedsongs[_streamingsong] != 0)
+                    {
+                        _ratedsongs[_streamingsong] = (_streamingsong.Rate + newrate) / 2;
+                        Console.WriteLine($"This song rate is {_ratedsongs[_streamingsong]}");
+                    }
+                    else
+                    {
+                        _ratedsongs[_streamingsong] = newrate;
+                        Console.WriteLine($"This song rate is {_ratedsongs[_streamingsong]}");
+                    }
                 }
-                else _ratedsongs.Add(_streamingsong, newrate);
+                else
+                {
+                    _ratedsongs.Add(_streamingsong, newrate);
+                    Console.WriteLine($"This song rate is {_ratedsongs[_streamingsong]}");
+
+                }
+
             }
         }
-        public void Foreward()
+        public void Forward()
         {
             if (_streamingsong != null)
             {
