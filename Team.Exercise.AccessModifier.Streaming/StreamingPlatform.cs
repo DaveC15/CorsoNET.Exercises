@@ -149,17 +149,19 @@ namespace Team.Exercise.AccessModifier.Streaming
             if (_streamingsong != null)
             {
                 int index = _apptracks.IndexOf(_streamingsong);
+                
+                _streamingsong.Status = SongStatus.Stop;
                 _streamingsong.ActualTime = 0;
 
                 if (index >= _apptracks.Count - 1)
-                {
+                { 
                     _streamingsong = _apptracks[0];
                 }
                 else _streamingsong = _apptracks[index + 1];
 
                 if (_streamingsong.Status != SongStatus.Play)
                 {
-                    _streamingsong.Status = SongStatus.Play;
+                    Play();
                 }
 
                 stopTimer();
@@ -173,21 +175,22 @@ namespace Team.Exercise.AccessModifier.Streaming
             {
                 int index = _apptracks.IndexOf(_streamingsong);
 
-                if (_streamingsong.ActualTime == 0)
+                
+                
+                _streamingsong.Status = SongStatus.Stop;
+                _streamingsong.ActualTime = 0;
+
+                if (index <= 0)
                 {
-                    _streamingsong.ActualTime = 0;
-
-                    if (index <= 0)
-                    {
-                        _streamingsong = _apptracks[_apptracks.Count - 1];
-                    }
-                    else _streamingsong = _apptracks[index - 1];
-
-                    if (_streamingsong.Status != SongStatus.Play)
-                    {
-                        _streamingsong.Status = SongStatus.Play;
-                    }
+                    _streamingsong = _apptracks[_apptracks.Count - 1];
                 }
+                else _streamingsong = _apptracks[index - 1];
+
+                if (_streamingsong.Status != SongStatus.Play)
+                {
+                    Play();
+                }
+                
 
                 stopTimer();
                 startTimer();
