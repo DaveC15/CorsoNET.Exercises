@@ -170,7 +170,7 @@ namespace Team.Exercise.AccessModifier.Streaming
             }
         }
 
-        public static void UserRegistrationM(App AmazonMusic)
+        private static void UserRegistrationM(App AmazonMusic)
         {
             string registred;
             do
@@ -182,12 +182,12 @@ namespace Team.Exercise.AccessModifier.Streaming
             if (registred == "L")
             {
                 AmazonMusic.LogIn();
-                MusicSelecterS(AmazonMusic);
+                MusicSelecterM(AmazonMusic);
             }
             else if (registred == "R")
             {
                 AmazonMusic.Registration();
-                UserRegistrationS(AmazonMusic);
+                UserRegistrationM(AmazonMusic);
             }
             else
             {
@@ -195,7 +195,7 @@ namespace Team.Exercise.AccessModifier.Streaming
             }
         }
 
-        public static void MusicSelecterM(App AmazonMusic)
+        private static void MusicSelecterM(App AmazonMusic)
         {
             string Select;
             do
@@ -212,7 +212,7 @@ namespace Team.Exercise.AccessModifier.Streaming
                 }
                 else AmazonMusic.Play();
 
-                MusicActionS(AmazonMusic);
+                MusicActionM(AmazonMusic);
             }
             else if (Select == "2")
             {
@@ -222,7 +222,7 @@ namespace Team.Exercise.AccessModifier.Streaming
                 }
                 else AmazonMusic.Play();
 
-                MusicActionS(AmazonMusic);
+                MusicActionM(AmazonMusic);
             }
             else if (Select == "3")
             {
@@ -232,12 +232,12 @@ namespace Team.Exercise.AccessModifier.Streaming
                 }
                 else AmazonMusic.Play();
 
-                MusicActionS(AmazonMusic);
+                MusicActionM(AmazonMusic);
             }
             else if (Select == "P")
             {
                 AmazonMusic.Play();
-                MusicActionS(AmazonMusic);
+                MusicActionM(AmazonMusic);
             }
             else
             {
@@ -245,7 +245,7 @@ namespace Team.Exercise.AccessModifier.Streaming
             }
         }
 
-        public static void MusicActionM(App AmazonMusic)
+        private static void MusicActionM(App AmazonMusic)
         {
             string action;
             do
@@ -257,27 +257,27 @@ namespace Team.Exercise.AccessModifier.Streaming
             if (action == "S")
             {
                 AmazonMusic.Stop();
-                MusicSelecterS(AmazonMusic);
+                MusicSelecterM(AmazonMusic);
             }
             else if (action == "P")
             {
                 AmazonMusic.Pause();
-                MusicSelecterS(AmazonMusic);
+                MusicSelecterM(AmazonMusic);
             }
             else if (action == "F")
             {
                 AmazonMusic.Forward();
-                MusicActionS(AmazonMusic);
+                MusicActionM(AmazonMusic);
             }
             else if (action == "R")
             {
                 AmazonMusic.Rate();
-                MusicActionS(AmazonMusic);
+                MusicActionM(AmazonMusic);
             }
             else if (action == "B")
             {
                 AmazonMusic.Backward();
-                MusicActionS(AmazonMusic);
+                MusicActionM(AmazonMusic);
             }
             else
             {
@@ -285,7 +285,7 @@ namespace Team.Exercise.AccessModifier.Streaming
             }
         }
 
-        public static void UserRegistrationA(App AppleMusic)
+        private static void UserRegistrationA(App AppleMusic)
         {
             string registred;
             do
@@ -297,12 +297,12 @@ namespace Team.Exercise.AccessModifier.Streaming
             if (registred == "L")
             {
                 AppleMusic.LogIn();
-                MusicSelecterS(AppleMusic);
+                MusicSelecterA(AppleMusic);
             }
             else if (registred == "R")
             {
                 AppleMusic.Registration();
-                UserRegistrationS(AppleMusic);
+                UserRegistrationA(AppleMusic);
             }
             else
             {
@@ -310,7 +310,7 @@ namespace Team.Exercise.AccessModifier.Streaming
             }
         }
 
-        public static void MusicSelecterA(App AppleMusic)
+        private static void MusicSelecterA(App AppleMusic)
         {
             string Select;
             do
@@ -327,7 +327,7 @@ namespace Team.Exercise.AccessModifier.Streaming
                 }
                 else AppleMusic.Play();
 
-                MusicActionS(AppleMusic);
+                MusicActionA(AppleMusic);
             }
             else if (Select == "2")
             {
@@ -337,7 +337,7 @@ namespace Team.Exercise.AccessModifier.Streaming
                 }
                 else AppleMusic.Play();
 
-                MusicActionS(AppleMusic);
+                MusicActionA(AppleMusic);
             }
             else if (Select == "3")
             {
@@ -347,12 +347,12 @@ namespace Team.Exercise.AccessModifier.Streaming
                 }
                 else AppleMusic.Play();
 
-                MusicActionS(AppleMusic);
+                MusicActionA(AppleMusic);
             }
             else if (Select == "P")
             {
                 AppleMusic.Play();
-                MusicActionS(AppleMusic);
+                MusicActionA(AppleMusic);
             }
             else
             {
@@ -360,7 +360,7 @@ namespace Team.Exercise.AccessModifier.Streaming
             }
         }
 
-        public static void MusicActionA(App AppleMusic)
+        private static void MusicActionA(App AppleMusic)
         {
             string action;
             do
@@ -372,27 +372,27 @@ namespace Team.Exercise.AccessModifier.Streaming
             if (action == "S")
             {
                 AppleMusic.Stop();
-                MusicSelecterS(AppleMusic);
+                MusicSelecterA(AppleMusic);
             }
             else if (action == "P")
             {
                 AppleMusic.Pause();
-                MusicSelecterS(AppleMusic);
+                MusicSelecterA(AppleMusic);
             }
             else if (action == "F")
             {
                 AppleMusic.Forward();
-                MusicActionS(AppleMusic);
+                MusicActionA(AppleMusic);
             }
             else if (action == "R")
             {
                 AppleMusic.Rate();
-                MusicActionS(AppleMusic);
+                MusicActionA(AppleMusic);
             }
             else if (action == "B")
             {
                 AppleMusic.Backward();
-                MusicActionS(AppleMusic);
+                MusicActionA(AppleMusic);
             }
             else
             {
