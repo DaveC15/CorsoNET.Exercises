@@ -23,7 +23,7 @@ namespace Team.Exercise.AccessModifier.Streaming
             _streamingtimer = new Timer(1000);
             _elapsedSeconds = 0;
         }
-        
+
 
         public void AddSong(string songName, int songDuration)
         {
@@ -150,12 +150,12 @@ namespace Team.Exercise.AccessModifier.Streaming
             if (_streamingsong != null)
             {
                 int index = _apptracks.IndexOf(_streamingsong);
-                
+
                 _streamingsong.Status = SongStatus.Stop;
                 _streamingsong.ActualTime = 0;
 
                 if (index >= _apptracks.Count - 1)
-                { 
+                {
                     _streamingsong = _apptracks[0];
                 }
                 else _streamingsong = _apptracks[index + 1];
@@ -176,8 +176,8 @@ namespace Team.Exercise.AccessModifier.Streaming
             {
                 int index = _apptracks.IndexOf(_streamingsong);
 
-                
-                
+
+
                 _streamingsong.Status = SongStatus.Stop;
                 _streamingsong.ActualTime = 0;
 
@@ -191,7 +191,7 @@ namespace Team.Exercise.AccessModifier.Streaming
                 {
                     Play();
                 }
-                
+
 
                 stopTimer();
                 startTimer();

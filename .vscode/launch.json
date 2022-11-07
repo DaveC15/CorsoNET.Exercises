@@ -2,6 +2,17 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": "Team.Exercise.Singleton",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build2",
+            "program": "${workspaceFolder}/Team.Exercise.Singleton/bin/Debug/net5.0/Team.Exercise.Singleton.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}",
+            "stopAtEntry": false,
+            "console": "integratedTerminal"
+        },
+        {
             "name": "Team.Exercise.AccessModifier.Streaming",
             "type": "coreclr",
             "request": "launch",

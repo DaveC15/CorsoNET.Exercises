@@ -93,6 +93,7 @@ namespace Team.Exercise.AccessModifier.Streaming
             {
                 Console.Write($"{_apptracks[i].Name}, ");
             }
+            Console.WriteLine("'P' to play the current song");
         }
     }
 }
