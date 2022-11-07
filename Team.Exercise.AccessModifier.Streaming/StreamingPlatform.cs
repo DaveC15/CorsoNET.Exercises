@@ -23,6 +23,7 @@ namespace Team.Exercise.AccessModifier.Streaming
             _streamingtimer = new Timer(1000);
             _elapsedSeconds = 0;
         }
+        
 
         public void AddSong(string songName, int songDuration)
         {

@@ -43,7 +43,6 @@ namespace Team.Exercise.AccessModifier.Streaming
             return false;
         }
 
-
         public bool Registration()
         {
             Console.WriteLine("Username: ");
@@ -84,6 +83,15 @@ namespace Team.Exercise.AccessModifier.Streaming
                 Console.WriteLine("User not found please register");
                 Registration();
 
+            }
+        }
+
+        public void Paste()
+        {
+            Console.Write("Select a song: ");
+            for (int i = 0; i < _apptracks.Count; i++)
+            {
+                Console.Write($"{_apptracks[i].Name}, ");
             }
         }
     }
