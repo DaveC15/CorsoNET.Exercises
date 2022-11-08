@@ -12,7 +12,7 @@
             _password = password;
         }
 
-        public void ReturnIP(Proxy proxy, Server server)
+        public void ServerConnection(Proxy proxy, Server server)
         {
             _IP = proxy.IP();
             server.Access(this);

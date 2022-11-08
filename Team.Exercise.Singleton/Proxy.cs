@@ -28,7 +28,7 @@ namespace Team.Exercise.Singleton
         public int IP()
         {
             int i = _p.Next(0, _ip.Length);
-            for (int j = 0; j< memory.Length; j++)
+            /*for (int j = 0; j< memory.Length; j++)
             {
                 if (memory[j] == _ip[i])
                 {
@@ -39,7 +39,7 @@ namespace Team.Exercise.Singleton
                     memory[j] = _ip[i];
                     return _ip[i];
                 }
-            }
+            }*/
 
             return _ip[i];
         }

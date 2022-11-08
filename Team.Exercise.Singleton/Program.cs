@@ -13,9 +13,9 @@ namespace Team.Exercise.Singleton
 
             Server s1 = new Server("server1");
 
-            u1.ReturnIP(p, s1);
-            u2.ReturnIP(p, s1);
-            u3.ReturnIP(p, s1);
+            u1.ServerConnection(p, s1);
+            u2.ServerConnection(p, s1);
+            u3.ServerConnection(p, s1);
         }
     }
 }
