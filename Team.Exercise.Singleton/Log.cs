@@ -32,12 +32,12 @@ namespace Team.Exercise.Singleton
 
             if (!File.Exists(FilePath))
             {
-                string header = string.Format("     Ora,     IP,    stato");
+                string header = string.Format("      DATA E ORA:         STATO   USERNAME       IP");
                 sb.AppendLine(header);
             }
 
-
-            sb.AppendLine(string.Format($"{DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss:fff")}, {data.IP}, {data.Stato}"));
+            sb.AppendLine();
+            sb.AppendLine(string.Format($"{DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss:fff")}: {data.Stato}  {data.Username} con IP: {data.IP}"));
             sb.AppendLine();
             File.AppendAllText(FilePath, sb.ToString());
 

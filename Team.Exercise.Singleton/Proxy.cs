@@ -5,9 +5,9 @@ namespace Team.Exercise.Singleton
     public class Proxy
     {
         private static Proxy _instance;
-        private int[] _ip = new int[3];
+        private int[] _ip = new int[10];
         private Random _p = new Random();
-        int[] memory = new int[3];
+        int[] memory = new int[10];
         Proxy()
         {
             for (int i = 0; i < _ip.Length; i++)

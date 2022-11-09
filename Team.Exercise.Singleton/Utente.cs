@@ -30,6 +30,7 @@
 
         public int IP { get { return _IP; } }
         public string Stato { get { return _stato;} }
+        public string Username { get { return _username; } }
 
     }
 }
