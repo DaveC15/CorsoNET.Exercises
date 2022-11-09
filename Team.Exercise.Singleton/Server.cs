@@ -15,7 +15,11 @@ namespace Team.Exercise.Singleton
         {
             
             Console.WriteLine($"Ti sei connesso con questo IP: {utente.IP}");
-            
+        }
+
+        public void Diconect(Utente utente)
+        {
+            Console.WriteLine($"Ti sei disconnesso da questo IP: {utente.IP}");
         }
     }
 }
