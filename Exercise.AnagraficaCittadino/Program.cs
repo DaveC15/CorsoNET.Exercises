@@ -10,7 +10,7 @@ namespace Exercise.AnagraficaCittadino
             Dictionary<string, Dictionary<ENTI,List<string>>> Anagrafica = new Dictionary<string, Dictionary<ENTI, List<string>>>();
             Anagrafica.Add("CRT45HSJ788SK9",new());
             Anagrafica.Add("CRgh63mdi92md9", new());
-            Anagrafica.Add("Ctbsdj98267mdk", new());
+            int i = 0;
 
 
 
@@ -70,87 +70,167 @@ namespace Exercise.AnagraficaCittadino
             Console.WriteLine("\n");
             foreach(var item in Anagrafica.Keys)
             {
+                Console.WriteLine($"Press {i} for");
+                i++;
                 Console.WriteLine(item);
             }
             Console.WriteLine("\n");
+            i = 0;
+            string input = Console.ReadLine();
 
-            Console.WriteLine("Questi sono gli enti che hanno dei dati pe il cittadino \"CRT45HSJ788SK9\"");
-            Console.WriteLine("\n");
-            foreach (var item in Anagrafica["CRT45HSJ788SK9"].Keys)
+            if (input == "0") 
             {
-                Console.WriteLine(item);
+                Console.WriteLine("Questi sono gli enti che hanno dei dati pe il cittadino \"CRT45HSJ788SK9\"");
+                Console.WriteLine("\n");
+                foreach (var item in Anagrafica["CRT45HSJ788SK9"].Keys)
+                {
+                    Console.WriteLine($"Press {i} for");
+                    i++;
+                    Console.WriteLine(item);
+                }
+                Console.WriteLine("Or Press T per visualizzare tutto");
+
+                Console.WriteLine("\n");
+
+                input = Console.ReadLine();
+
+                switch(input)
+                {
+                    case "0":
+                        foreach (var item in Anagrafica["CRT45HSJ788SK9"][ENTI.POLIZIA])
+                        {
+                            Console.WriteLine(item);
+                        }
+                        Console.WriteLine("\n");
+                        break;
+                        case "1":
+                        foreach (var item in Anagrafica["CRT45HSJ788SK9"][ENTI.ASL])
+                        {
+                            Console.WriteLine(item);
+                        }
+                        Console.WriteLine("\n");
+                        break;
+                        case "2":
+                        foreach (var item in Anagrafica["CRT45HSJ788SK9"][ENTI.INPS])
+                        {
+                            Console.WriteLine(item);
+                        }
+                        Console.WriteLine("\n");
+                        break;
+                        case "3":
+                        foreach (var item in Anagrafica["CRT45HSJ788SK9"][ENTI.COMUNE])
+                        {
+                            Console.WriteLine(item);
+                        }
+                        Console.WriteLine("\n");
+                        break;
+                        case "4":
+                        foreach (var item in Anagrafica["CRT45HSJ788SK9"][ENTI.SCUOLA])
+                        {
+                            Console.WriteLine(item);
+                        }
+                        Console.WriteLine("\n");
+                        break;
+                        case "T":
+                        foreach (var item in Anagrafica["CRT45HSJ788SK9"][ENTI.POLIZIA])
+                        {
+                            Console.WriteLine(item);
+                        }
+                        Console.WriteLine("\n");
+                        foreach (var item in Anagrafica["CRT45HSJ788SK9"][ENTI.ASL])
+                        {
+                            Console.WriteLine(item);
+                        }
+                        Console.WriteLine("\n");
+                        foreach (var item in Anagrafica["CRT45HSJ788SK9"][ENTI.INPS])
+                        {
+                            Console.WriteLine(item);
+                        }
+                        Console.WriteLine("\n");
+                        foreach (var item in Anagrafica["CRT45HSJ788SK9"][ENTI.COMUNE])
+                        {
+                            Console.WriteLine(item);
+                        }
+                        Console.WriteLine("\n");
+                        foreach (var item in Anagrafica["CRT45HSJ788SK9"][ENTI.SCUOLA])
+                        {
+                            Console.WriteLine(item);
+                        }
+                        Console.WriteLine("\n");
+                        break;
+                }
             }
-            Console.WriteLine("\n");
-
-           
-
-            Console.WriteLine("Cittadino \"CRT45HSJ788SK9\"");
-            Console.WriteLine("\n");  
-
-            foreach (var item in Anagrafica["CRT45HSJ788SK9"][ENTI.POLIZIA])
+            else
             {
-                Console.WriteLine(item);
-            }
-            Console.WriteLine("\n");
+                Console.WriteLine("Questi sono gli enti che hanno dei dati pe il cittadino \"CRgh63mdi92md9\"");
+                Console.WriteLine("\n");
+                foreach (var item in Anagrafica["CRgh63mdi92md9"].Keys)
+                {
+                    Console.WriteLine($"Press {i} for");
+                    i++;
+                    Console.WriteLine(item);
+                }
+                Console.WriteLine("Or Press T per visualizzare tutto");
+                Console.WriteLine("\n");
 
-            foreach (var item in Anagrafica["CRT45HSJ788SK9"][ENTI.ASL])
-            {
-                Console.WriteLine(item);
-            }
-            Console.WriteLine("\n");
+                input = Console.ReadLine();
 
-            foreach (var item in Anagrafica["CRT45HSJ788SK9"][ENTI.INPS])
-            {
-                Console.WriteLine(item);
-            }
-            Console.WriteLine("\n");
+                switch (input)
+                {
+                    case "0":
+                        foreach (var item in Anagrafica["CRgh63mdi92md9"][ENTI.POLIZIA])
+                        {
+                            Console.WriteLine(item);
+                        }
+                        Console.WriteLine("\n");
+                        break;
+                    case "1":
+                        foreach (var item in Anagrafica["CRgh63mdi92md9"][ENTI.ASL])
+                        {
+                            Console.WriteLine(item);
+                        }
+                        Console.WriteLine("\n");
+                        break;
+                    case "2":
+                        foreach (var item in Anagrafica["CRgh63mdi92md9"][ENTI.COMUNE])
+                        {
+                            Console.WriteLine(item);
+                        }
+                        Console.WriteLine("\n");
+                        break;
+                    case "3":
+                        foreach (var item in Anagrafica["CRgh63mdi92md9"][ENTI.SCUOLA])
+                        {
+                            Console.WriteLine(item);
+                        }
+                        Console.WriteLine("\n");
+                        break;
+                    case "T":
+                        foreach (var item in Anagrafica["CRgh63mdi92md9"][ENTI.POLIZIA])
+                        {
+                            Console.WriteLine(item);
+                        }
+                        Console.WriteLine("\n");
+                        foreach (var item in Anagrafica["CRgh63mdi92md9"][ENTI.ASL])
+                        {
+                            Console.WriteLine(item);
+                        }
+                        Console.WriteLine("\n");
+                        foreach (var item in Anagrafica["CRgh63mdi92md9"][ENTI.COMUNE])
+                        {
+                            Console.WriteLine(item);
+                        }
+                        Console.WriteLine("\n");
+                        foreach (var item in Anagrafica["CRgh63mdi92md9"][ENTI.SCUOLA])
+                        {
+                            Console.WriteLine(item);
+                        }
+                        Console.WriteLine("\n");
+                        break;
 
-            foreach (var item in Anagrafica["CRT45HSJ788SK9"][ENTI.COMUNE])
-            {
-                Console.WriteLine(item);
+                }
             }
-            Console.WriteLine("\n");
-
-            foreach (var item in Anagrafica["CRT45HSJ788SK9"][ENTI.SCUOLA])
-            {
-                Console.WriteLine(item);
-            }
-            Console.WriteLine("\n");
-
-            Console.WriteLine("Questi sono gli enti che hanno dei dati pe il cittadino \"CRgh63mdi92md9\"");
-            Console.WriteLine("\n");
-            foreach (var item in Anagrafica["CRgh63mdi92md9"].Keys)
-            {
-                Console.WriteLine(item);
-            }
-            Console.WriteLine("\n");
-
-            Console.WriteLine("Cittadino \"CRgh63mdi92md9\"");
-            Console.WriteLine("\n");
-
-            foreach (var item in Anagrafica["CRgh63mdi92md9"][ENTI.POLIZIA])
-            {
-                Console.WriteLine(item);
-            }
-            Console.WriteLine("\n");
-
-            foreach (var item in Anagrafica["CRgh63mdi92md9"][ENTI.ASL])
-            {
-                Console.WriteLine(item);
-            }
-            Console.WriteLine("\n");
-
-            foreach (var item in Anagrafica["CRgh63mdi92md9"][ENTI.COMUNE])
-            {
-                Console.WriteLine(item);
-            }
-            Console.WriteLine("\n");
-
-            foreach (var item in Anagrafica["CRgh63mdi92md9"][ENTI.SCUOLA])
-            {
-                Console.WriteLine(item);
-            }
-            Console.WriteLine("\n");
+            
         }
     }
     public enum ENTI
