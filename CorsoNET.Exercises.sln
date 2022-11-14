@@ -7,7 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Team.Exercise.Polimorfismo.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Team.Exercise.AccessModifier.Streaming", "Team.Exercise.AccessModifier.Streaming\Team.Exercise.AccessModifier.Streaming.csproj", "{61FA8B57-4F66-4FE2-B3ED-7953A2BE9C86}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Team.Exercise.Singleton", "Team.Exercise.Singleton\Team.Exercise.Singleton.csproj", "{19D62DB2-CC61-40A1-91BD-F12AF75B23DB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Team.Exercise.Singleton", "Team.Exercise.Singleton\Team.Exercise.Singleton.csproj", "{19D62DB2-CC61-40A1-91BD-F12AF75B23DB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exercise.AnagraficaCittadino", "Exercise.AnagraficaCittadino\Exercise.AnagraficaCittadino.csproj", "{D0A6B92D-4246-4647-AEC8-8E5621DC2AFC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{19D62DB2-CC61-40A1-91BD-F12AF75B23DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{19D62DB2-CC61-40A1-91BD-F12AF75B23DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{19D62DB2-CC61-40A1-91BD-F12AF75B23DB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D0A6B92D-4246-4647-AEC8-8E5621DC2AFC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0A6B92D-4246-4647-AEC8-8E5621DC2AFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0A6B92D-4246-4647-AEC8-8E5621DC2AFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D0A6B92D-4246-4647-AEC8-8E5621DC2AFC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
