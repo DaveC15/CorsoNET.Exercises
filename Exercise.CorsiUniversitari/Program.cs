@@ -8,17 +8,163 @@ namespace Exercise.CorsiUniversitari
     {
         static void Main(string[] args)
         {
+            Random rd = new Random();
             Esame prova = new Esame();
-            int Matricola = 0;
+            Esame prova2 = new Esame();
+            Esame prova3 = new Esame();
+            int Matricola;
             Dictionary<CORSI, Dictionary<int, List<Esame>>> CorsiUniversitari = new Dictionary<CORSI, Dictionary<int, List<Esame>>>();
 
             foreach(CORSI corsi in (CORSI[])Enum.GetValues(typeof(CORSI)))
             {
                 CorsiUniversitari.Add(corsi, new());
-                CorsiUniversitari[corsi].Add(Matricola, new());
-                CorsiUniversitari[corsi][Matricola].Add(prova);
-                Matricola++;
             }
+            #region Aggiunta Matricole
+            Matricola = rd.Next(100000, 500000);
+            CorsiUniversitari[CORSI.INFORMATICA].Add(Matricola, new());
+            CorsiUniversitari[CORSI.INFORMATICA][Matricola].Add(prova);
+            Matricola = rd.Next(100000, 500000);
+            CorsiUniversitari[CORSI.INFORMATICA].Add(Matricola, new());
+            CorsiUniversitari[CORSI.INFORMATICA][Matricola].Add(prova2);
+            CorsiUniversitari[CORSI.INFORMATICA][Matricola].Add(prova3);
+            Matricola = rd.Next(100000, 500000);
+            CorsiUniversitari[CORSI.INFORMATICA].Add(Matricola, new());
+            CorsiUniversitari[CORSI.INFORMATICA][Matricola].Add(prova);
+            Matricola = rd.Next(100000, 500000);
+            CorsiUniversitari[CORSI.INFORMATICA].Add(Matricola, new());
+            CorsiUniversitari[CORSI.INFORMATICA][Matricola].Add(prova3);
+            Matricola = rd.Next(100000, 500000);
+            CorsiUniversitari[CORSI.INFORMATICA].Add(Matricola, new());
+            CorsiUniversitari[CORSI.INFORMATICA][Matricola].Add(prova);
+            Matricola = rd.Next(100000, 500000);
+            CorsiUniversitari[CORSI.INFORMATICA].Add(Matricola, new());
+            CorsiUniversitari[CORSI.INFORMATICA][Matricola].Add(prova2);
+
+            Matricola = rd.Next(100000, 500000);
+            CorsiUniversitari[CORSI.MEDICINA].Add(Matricola, new());
+            CorsiUniversitari[CORSI.INFORMATICA][Matricola].Add(prova2);
+            CorsiUniversitari[CORSI.INFORMATICA][Matricola].Add(prova3);
+            Matricola = rd.Next(100000, 500000);
+            CorsiUniversitari[CORSI.MEDICINA].Add(Matricola, new());
+            CorsiUniversitari[CORSI.INFORMATICA][Matricola].Add(prova2);
+            CorsiUniversitari[CORSI.INFORMATICA][Matricola].Add(prova3);
+            Matricola = rd.Next(100000, 500000);
+            CorsiUniversitari[CORSI.MEDICINA].Add(Matricola, new());
+            CorsiUniversitari[CORSI.INFORMATICA][Matricola].Add(prova2);
+            CorsiUniversitari[CORSI.INFORMATICA][Matricola].Add(prova3);
+            Matricola = rd.Next(100000, 500000);
+            CorsiUniversitari[CORSI.MEDICINA].Add(Matricola, new());
+            CorsiUniversitari[CORSI.INFORMATICA][Matricola].Add(prova2);
+            CorsiUniversitari[CORSI.INFORMATICA][Matricola].Add(prova3);
+            Matricola = rd.Next(100000, 500000);
+            CorsiUniversitari[CORSI.MEDICINA].Add(Matricola, new());
+            CorsiUniversitari[CORSI.INFORMATICA][Matricola].Add(prova2);
+            CorsiUniversitari[CORSI.INFORMATICA][Matricola].Add(prova3);
+            Matricola = rd.Next(100000, 500000);
+            CorsiUniversitari[CORSI.MEDICINA].Add(Matricola, new());
+            CorsiUniversitari[CORSI.INFORMATICA][Matricola].Add(prova2);
+            CorsiUniversitari[CORSI.INFORMATICA][Matricola].Add(prova3);
+
+            Matricola = rd.Next(100000, 500000);
+            CorsiUniversitari[CORSI.INGEGNERIA].Add(Matricola, new());
+            CorsiUniversitari[CORSI.INFORMATICA][Matricola].Add(prova2);
+            CorsiUniversitari[CORSI.INFORMATICA][Matricola].Add(prova3);
+            Matricola = rd.Next(100000, 500000);
+            CorsiUniversitari[CORSI.INGEGNERIA].Add(Matricola, new());
+            CorsiUniversitari[CORSI.INFORMATICA][Matricola].Add(prova2);
+            CorsiUniversitari[CORSI.INFORMATICA][Matricola].Add(prova3);
+            Matricola = rd.Next(100000, 500000);
+            CorsiUniversitari[CORSI.INGEGNERIA].Add(Matricola, new());
+            CorsiUniversitari[CORSI.INFORMATICA][Matricola].Add(prova2);
+            CorsiUniversitari[CORSI.INFORMATICA][Matricola].Add(prova3);
+            Matricola = rd.Next(100000, 500000);
+            CorsiUniversitari[CORSI.INGEGNERIA].Add(Matricola, new());
+            CorsiUniversitari[CORSI.INFORMATICA][Matricola].Add(prova2);
+            CorsiUniversitari[CORSI.INFORMATICA][Matricola].Add(prova3);
+            Matricola = rd.Next(100000, 500000);
+            CorsiUniversitari[CORSI.INGEGNERIA].Add(Matricola, new());
+            CorsiUniversitari[CORSI.INFORMATICA][Matricola].Add(prova2);
+            CorsiUniversitari[CORSI.INFORMATICA][Matricola].Add(prova3);
+            Matricola = rd.Next(100000, 500000);
+            CorsiUniversitari[CORSI.INGEGNERIA].Add(Matricola, new());
+            CorsiUniversitari[CORSI.INFORMATICA][Matricola].Add(prova2);
+            CorsiUniversitari[CORSI.INFORMATICA][Matricola].Add(prova3);
+
+            Matricola = rd.Next(100000, 500000);
+            CorsiUniversitari[CORSI.CHIMICA].Add(Matricola, new());
+            CorsiUniversitari[CORSI.INFORMATICA][Matricola].Add(prova2);
+            CorsiUniversitari[CORSI.INFORMATICA][Matricola].Add(prova3);
+            Matricola = rd.Next(100000, 500000);
+            CorsiUniversitari[CORSI.CHIMICA].Add(Matricola, new());
+            CorsiUniversitari[CORSI.INFORMATICA][Matricola].Add(prova2);
+            CorsiUniversitari[CORSI.INFORMATICA][Matricola].Add(prova3);
+            Matricola = rd.Next(100000, 500000);
+            CorsiUniversitari[CORSI.CHIMICA].Add(Matricola, new());
+            CorsiUniversitari[CORSI.INFORMATICA][Matricola].Add(prova2);
+            CorsiUniversitari[CORSI.INFORMATICA][Matricola].Add(prova3);
+            Matricola = rd.Next(100000, 500000);
+            CorsiUniversitari[CORSI.CHIMICA].Add(Matricola, new());
+            CorsiUniversitari[CORSI.INFORMATICA][Matricola].Add(prova2);
+            CorsiUniversitari[CORSI.INFORMATICA][Matricola].Add(prova3);
+            Matricola = rd.Next(100000, 500000);
+            CorsiUniversitari[CORSI.CHIMICA].Add(Matricola, new());
+            CorsiUniversitari[CORSI.INFORMATICA][Matricola].Add(prova2);
+            CorsiUniversitari[CORSI.INFORMATICA][Matricola].Add(prova3);
+            Matricola = rd.Next(100000, 500000);
+            CorsiUniversitari[CORSI.CHIMICA].Add(Matricola, new());
+            CorsiUniversitari[CORSI.INFORMATICA][Matricola].Add(prova2);
+            CorsiUniversitari[CORSI.INFORMATICA][Matricola].Add(prova3);
+
+            Matricola = rd.Next(100000, 500000);
+            CorsiUniversitari[CORSI.MATEMATICA].Add(Matricola, new());
+            CorsiUniversitari[CORSI.INFORMATICA][Matricola].Add(prova2);
+            CorsiUniversitari[CORSI.INFORMATICA][Matricola].Add(prova3);
+            Matricola = rd.Next(100000, 500000);
+            CorsiUniversitari[CORSI.MATEMATICA].Add(Matricola, new());
+            CorsiUniversitari[CORSI.INFORMATICA][Matricola].Add(prova2);
+            CorsiUniversitari[CORSI.INFORMATICA][Matricola].Add(prova3);
+            Matricola = rd.Next(100000, 500000);
+            CorsiUniversitari[CORSI.MATEMATICA].Add(Matricola, new());
+            CorsiUniversitari[CORSI.INFORMATICA][Matricola].Add(prova2);
+            CorsiUniversitari[CORSI.INFORMATICA][Matricola].Add(prova3);
+            Matricola = rd.Next(100000, 500000);
+            CorsiUniversitari[CORSI.MATEMATICA].Add(Matricola, new());
+            CorsiUniversitari[CORSI.INFORMATICA][Matricola].Add(prova2);
+            CorsiUniversitari[CORSI.INFORMATICA][Matricola].Add(prova3);
+            Matricola = rd.Next(100000, 500000);
+            CorsiUniversitari[CORSI.MATEMATICA].Add(Matricola, new());
+            CorsiUniversitari[CORSI.INFORMATICA][Matricola].Add(prova2);
+            CorsiUniversitari[CORSI.INFORMATICA][Matricola].Add(prova3);
+            Matricola = rd.Next(100000, 500000);
+            CorsiUniversitari[CORSI.MATEMATICA].Add(Matricola, new());
+            CorsiUniversitari[CORSI.INFORMATICA][Matricola].Add(prova2);
+            CorsiUniversitari[CORSI.INFORMATICA][Matricola].Add(prova3);
+
+            Matricola = rd.Next(100000, 500000);
+            CorsiUniversitari[CORSI.FISICA].Add(Matricola, new());
+            CorsiUniversitari[CORSI.INFORMATICA][Matricola].Add(prova2);
+            CorsiUniversitari[CORSI.INFORMATICA][Matricola].Add(prova3);
+            Matricola = rd.Next(100000, 500000);
+            CorsiUniversitari[CORSI.FISICA].Add(Matricola, new());
+            CorsiUniversitari[CORSI.INFORMATICA][Matricola].Add(prova2);
+            CorsiUniversitari[CORSI.INFORMATICA][Matricola].Add(prova3);
+            Matricola = rd.Next(100000, 500000);
+            CorsiUniversitari[CORSI.FISICA].Add(Matricola, new());
+            CorsiUniversitari[CORSI.INFORMATICA][Matricola].Add(prova2);
+            CorsiUniversitari[CORSI.INFORMATICA][Matricola].Add(prova3);
+            Matricola = rd.Next(100000, 500000);
+            CorsiUniversitari[CORSI.FISICA].Add(Matricola, new());
+            CorsiUniversitari[CORSI.INFORMATICA][Matricola].Add(prova2);
+            CorsiUniversitari[CORSI.INFORMATICA][Matricola].Add(prova3);
+            Matricola = rd.Next(100000, 500000);
+            CorsiUniversitari[CORSI.FISICA].Add(Matricola, new());
+            CorsiUniversitari[CORSI.INFORMATICA][Matricola].Add(prova2);
+            CorsiUniversitari[CORSI.INFORMATICA][Matricola].Add(prova3);
+            Matricola = rd.Next(100000, 500000);
+            CorsiUniversitari[CORSI.FISICA].Add(Matricola, new());
+            CorsiUniversitari[CORSI.INFORMATICA][Matricola].Add(prova2);
+            CorsiUniversitari[CORSI.INFORMATICA][Matricola].Add(prova3);
+            #endregion
 
             foreach (CORSI corsi in (CORSI[])Enum.GetValues(typeof(CORSI)))
             {
@@ -36,13 +182,11 @@ namespace Exercise.CorsiUniversitari
             
         }
     }
-
    public class Esame
     {
         static Random rd = new Random();
         public int Voto = rd.Next(0, 31);
     }
-    
     public enum CORSI
     {
         INFORMATICA,
