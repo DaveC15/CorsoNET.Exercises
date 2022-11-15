@@ -13,7 +13,7 @@ namespace Exercise.AnagraficaCittadino
             int i = 0;
 
 
-
+            #region Aggiunta valori anagrafica
             Anagrafica["CRT45HSJ788SK9"].Add(ENTI.POLIZIA, new());
             Anagrafica["CRT45HSJ788SK9"].Add(ENTI.ASL, new());
             Anagrafica["CRT45HSJ788SK9"].Add(ENTI.INPS, new());
@@ -63,7 +63,7 @@ namespace Exercise.AnagraficaCittadino
             Anagrafica["CRgh63mdi92md9"][ENTI.COMUNE].Add("Nazionalità: italiana");
             Anagrafica["CRgh63mdi92md9"][ENTI.SCUOLA].Add("Titolo studi: Diploma");
             Anagrafica["CRgh63mdi92md9"][ENTI.SCUOLA].Add("Stato studi: In corso");
-
+            #endregion
 
 
             Console.WriteLine("Questi sono i codici fiscali dei cittadini presenti");
