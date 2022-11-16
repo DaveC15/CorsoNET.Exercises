@@ -10,7 +10,31 @@ namespace Exercise.WriteFile
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            List<Persona> list = new List<Persona>() { new Persona {name = "davide", surname="chiesa" }, new Persona { name = "mario", surname = "rossi" } };
+            Prova(@"C:\Log", list);
+        }
+        public static void Prova<T>(string path, List<T> ts)
+        {
+            List<string> list = new List<string>();
+            if (ts is List<Persona>)
+            {
+                List<Persona> person = ts.Cast<Persona>().ToList();
+                foreach (var item in person)
+                {
+                    list.Add(item.name);
+                    list.Add(item.surname);
+
+                }
+            }
+            else
+            {
+                List<Conto> conto = ts.Cast<Conto>().ToList();
+                foreach (var item in conto)
+                {
+                    list.Add(item.id);
+                }
+            }
+            File.WriteAllLines(path, list);
         }
     }
 
@@ -23,28 +47,6 @@ namespace Exercise.WriteFile
     {
         public string id;
     }
-    public static void Prova<T>(string path, List<T> ts)
-    {
-        List<string> list = new List<string>();
-        if (ts is List<Persona>)
-        {
-            List<Persona> person = ts.Cast<Persona>().ToList();
-            foreach (var item in person)
-            {
-                list.Add(item.name);
-                list.Add(item.surname);
-                
-            }
-        }
-        else
-        {
-            List<Conto> conto = ts.Cast<Conto>().ToList();
-            foreach (var item in conto)
-            {
-                list.Add(item.id);
-            }
-        }
-        File.WriteAllLines(path, list);
-    }
+    
     
 }
