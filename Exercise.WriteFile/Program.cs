@@ -11,7 +11,7 @@ namespace Exercise.WriteFile
         static void Main(string[] args)
         {
             List<Persona> list = new List<Persona>() { new Persona {name = "davide", surname="chiesa" }, new Persona { name = "mario", surname = "rossi" } };
-            Prova(@"C:\Log", list);
+            Prova(@"C:\LOG\prova.txt", list);
         }
         public static void Prova<T>(string path, List<T> ts)
         {
@@ -34,6 +34,12 @@ namespace Exercise.WriteFile
                     list.Add(item.id);
                 }
             }
+            if (!File.Exists(path))
+            {
+                File.Create(path);
+                
+            }
+            
             File.WriteAllLines(path, list);
         }
     }
