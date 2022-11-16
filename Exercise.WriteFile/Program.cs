@@ -10,8 +10,10 @@ namespace Exercise.WriteFile
     {
         static void Main(string[] args)
         {
-            List<Persona> list = new List<Persona>() { new Persona {name = "davide", surname="chiesa" }, new Persona { name = "mario", surname = "rossi" } };
-            Prova(@"C:\LOG\prova.txt", list);
+            List<Persona> persona = new List<Persona>() { new Persona {name = "davide", surname="chiesa" }, new Persona { name = "mario", surname = "rossi" } };
+            Prova(@"C:\LOG\persona.txt", persona);
+            List<Conto> _conto = new List<Conto>() { new Conto { id = "TSBSJ53738" }, new Conto { id = "OKGNY73839"} };
+            Prova(@"C:\LOG\conto.txt", _conto);
         }
         public static void Prova<T>(string path, List<T> ts)
         {
@@ -34,14 +36,9 @@ namespace Exercise.WriteFile
                     list.Add(item.id);
                 }
             }
-            if (!File.Exists(path))
-            {
-                File.Create(path);
-                
-            }
-            
             File.WriteAllLines(path, list);
         }
+        
     }
 
     public class Persona
