@@ -11,13 +11,24 @@ namespace Exercise.WriteFile
         static void Main(string[] args)
         {
             List<Persona> persona = new List<Persona>() { new Persona {name = "davide", surname="chiesa" }, new Persona { name = "mario", surname = "rossi" } };
-            Prova(@"C:\LOG\persona.txt", persona);
+            WriteonFile<Persona>(@"C:\LOG\persona.txt", persona);
             List<Conto> _conto = new List<Conto>() { new Conto { id = "TSBSJ53738" }, new Conto { id = "OKGNY73839"} };
-            Prova(@"C:\LOG\conto.txt", _conto);
+            WriteonFile<Conto>(@"C:\LOG\conto.txt", _conto);
         }
-        public static void Prova<T>(string path, List<T> ts)
+        public static void WriteonFile<T>(string path, List<T> ts) where T : class, new()
         {
             List<string> list = new List<string>();
+            var cols = ts[0].GetType().GetProperties();
+            foreach ( var line in ts )
+            {
+                foreach (var col in cols)
+                {
+                    list.Add($"{col.Name}: ");
+                    list.Add(col.GetValue(line).ToString());
+                }
+                list.Add("");
+            }
+            /* Controllo precedente
             if (ts is List<Persona>)
             {
                 List<Persona> person = ts.Cast<Persona>().ToList();
@@ -25,7 +36,6 @@ namespace Exercise.WriteFile
                 {
                     list.Add(item.name);
                     list.Add(item.surname);
-
                 }
             }
             else
@@ -35,20 +45,20 @@ namespace Exercise.WriteFile
                 {
                     list.Add(item.id);
                 }
-            }
+            }*/
             File.WriteAllLines(path, list);
         }
-        
     }
 
     public class Persona
     {
-        public string name;
-        public string surname;
+        public string name { get; set; }
+        public string surname { get; set; }
+
     }
     public class Conto
     {
-        public string id;
+        public string id { get; set; }
     }
     
     
