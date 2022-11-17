@@ -80,16 +80,20 @@ namespace Exercise.WriteFile
             T entry = new T();
             var prop = entry.GetType().GetProperties();
 
-            for (int i =0; i < prop.Length; i++)
+            if(prop.Length == headers.Length)
             {
-              
+                for (int i = 0; i < prop.Length; i++)
+                {
+
                     if (prop.ElementAt(i).Name == headers[i])
                     {
                         corretto = true;
                     }
-                    else p= false;
-                
+                    else p = false;
+
+                }
             }
+            
 
             if (corretto && p)
             {
