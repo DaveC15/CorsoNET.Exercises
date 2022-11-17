@@ -13,7 +13,7 @@ namespace Exercise.WriteFile
         {
             List<Persona> prova = new List<Persona>() { new Persona { name = "davide", surname = "chiesa" }, new Persona { name = "mario", surname = "rossi" } };
             List<Persona> persona;
-            WriteonFile<Persona>(@"C:\LOG\persona.csv", prova);
+            //WriteonFile<Persona>(@"C:\LOG\persona.csv", prova);
             persona = ReadfromFile<Persona>(@"C:\LOG\persona.csv");
             foreach (var item in persona)
             {
@@ -76,28 +76,29 @@ namespace Exercise.WriteFile
             string[] headers = lines.ElementAt(0).Split(" ");
             lines.RemoveAt(0);
             bool corretto = false;
+            bool p = true;
             T entry = new T();
             var prop = entry.GetType().GetProperties();
 
             for (int i =0; i < prop.Length; i++)
             {
-                for (int z = 0; z<headers.Length; z++)
-                {
-                    if (prop.ElementAt(i).Name == headers[z])
+              
+                    if (prop.ElementAt(i).Name == headers[i])
                     {
                         corretto = true;
                     }
-                }
+                    else p= false;
+                
             }
-            
-            if ( corretto )
+
+            if (corretto && p)
             {
                 foreach (var line in lines)
                 {
                     int j = 0;
                     string[] colons = line.Split(" ");
-                    entry= new T();
-                    foreach(var col in colons)
+                    entry = new T();
+                    foreach (var col in colons)
                     {
                         entry.GetType().GetProperty(headers[j]).SetValue(entry, Convert.ChangeType(col, entry.GetType().GetProperty(headers[j]).PropertyType));
                         j++;
@@ -105,6 +106,7 @@ namespace Exercise.WriteFile
                     list.Add(entry);
                 }
             }
+            else Console.WriteLine("le proprietà nel file non corrispondono a proprietà oggetto");
             
 
             return list;
