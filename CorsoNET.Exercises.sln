@@ -13,7 +13,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Exercise.AnagraficaCittadin
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Exercise.CorsiUniversitari", "Exercise.CorsiUniversitari\Exercise.CorsiUniversitari.csproj", "{DFA93DAC-75CF-42FE-90D2-5D39E9CE2580}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exercise.WriteFile", "Exercise.WriteFile\Exercise.WriteFile.csproj", "{35D7AC9D-4F6F-4B2A-8FF0-8BF222E62019}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Exercise.WriteFile", "Exercise.WriteFile\Exercise.WriteFile.csproj", "{35D7AC9D-4F6F-4B2A-8FF0-8BF222E62019}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exercise.Logger", "Exercise.Logger\Exercise.Logger.csproj", "{653B3AC5-129B-4CA3-9D2C-11C9BE79F1ED}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{35D7AC9D-4F6F-4B2A-8FF0-8BF222E62019}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{35D7AC9D-4F6F-4B2A-8FF0-8BF222E62019}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{35D7AC9D-4F6F-4B2A-8FF0-8BF222E62019}.Release|Any CPU.Build.0 = Release|Any CPU
+		{653B3AC5-129B-4CA3-9D2C-11C9BE79F1ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{653B3AC5-129B-4CA3-9D2C-11C9BE79F1ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{653B3AC5-129B-4CA3-9D2C-11C9BE79F1ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{653B3AC5-129B-4CA3-9D2C-11C9BE79F1ED}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

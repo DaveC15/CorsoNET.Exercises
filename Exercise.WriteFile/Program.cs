@@ -23,7 +23,7 @@ namespace Exercise.WriteFile
             {
                 foreach (var col in cols)
                 {
-                    list.Add($"{col.Name}: ");
+                    list.Add($"--{col.Name}: ");
                     list.Add(col.GetValue(line).ToString());
                 }
                 list.Add("");
