@@ -26,9 +26,9 @@ namespace Exercise.Logger
             StringBuilder sb = new StringBuilder();
             var prova = message.GetType().GetProperties().ToList();
 
-            sb.AppendLine($"Tipo classe: {message.GetType().Name}");
-            sb.AppendLine();
-            sb.AppendLine($"Proprietà: ");
+            //sb.AppendLine($"Tipo classe: {message.GetType().Name}");
+            //sb.AppendLine();
+            //sb.AppendLine($"Proprietà: ");
             foreach ( var prop in prova )
             {
                 sb.AppendLine($"{prop.Name}, {prop.GetValue(message)}");
@@ -36,5 +36,7 @@ namespace Exercise.Logger
             
             File.AppendAllText(_Path, sb.ToString());
         }
+
+        
     }
 }

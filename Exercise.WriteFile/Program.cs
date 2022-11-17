@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 
 namespace Exercise.WriteFile
@@ -10,23 +11,43 @@ namespace Exercise.WriteFile
     {
         static void Main(string[] args)
         {
-            List<Persona> persona = new List<Persona>() { new Persona {name = "davide", surname="chiesa" }, new Persona { name = "mario", surname = "rossi" } };
-            WriteonFile<Persona>(@"C:\LOG\persona.txt", persona);
-            List<Conto> _conto = new List<Conto>() { new Conto { id = "TSBSJ53738" }, new Conto { id = "OKGNY73839"} };
-            WriteonFile<Conto>(@"C:\LOG\conto.txt", _conto);
+            List<Persona> prova = new List<Persona>() { new Persona { name = "davide", surname = "chiesa" }, new Persona { name = "mario", surname = "rossi" } };
+            List<Persona> persona;
+            WriteonFile<Persona>(@"C:\LOG\persona.csv", prova);
+            persona = ReadfromFile<Persona>(@"C:\LOG\persona.csv");
+            foreach (var item in persona)
+            {
+                Console.WriteLine(item.name);
+                Console.WriteLine(item.surname);
+            }
+
         }
         public static void WriteonFile<T>(string path, List<T> ts) where T : class, new()
         {
             List<string> list = new List<string>();
+            StringBuilder sb = new StringBuilder();
             var cols = ts[0].GetType().GetProperties();
-            foreach ( var line in ts )
+            if(!File.Exists(path))
             {
-                foreach (var col in cols)
+                foreach (var col in cols)// cicla tutte le Entity della classe in oggetto
                 {
-                    list.Add($"--{col.Name}: ");
-                    list.Add(col.GetValue(line).ToString());
+                    sb.Append(col.Name);
+                    sb.Append(" ");
                 }
-                list.Add("");
+
+                list.Add(sb.ToString().Substring(0, sb.Length - 1));
+                
+            }
+            foreach (var row in ts)
+            {
+
+                sb = new StringBuilder();
+                foreach (var col in cols)// cicla tutte le Entity della classe in oggetto
+                {
+                    sb.Append(col.GetValue(row));
+                    sb.Append(" ");
+                }
+                list.Add(sb.ToString().Substring(0, sb.Length - 1));
             }
             /* Controllo precedente
             if (ts is List<Persona>)
@@ -46,8 +67,50 @@ namespace Exercise.WriteFile
                     list.Add(item.id);
                 }
             }*/
-            File.WriteAllLines(path, list);
+            File.AppendAllLines(path, list);
         }
+        public static List<T> ReadfromFile<T>(string path) where T : class, new()
+        {
+            List<T> list = new List<T>();
+            var lines = File.ReadAllLines(path).ToList();
+            string[] headers = lines.ElementAt(0).Split(" ");
+            lines.RemoveAt(0);
+            bool corretto = false;
+            T entry = new T();
+            var prop = entry.GetType().GetProperties();
+
+            for (int i =0; i < prop.Length; i++)
+            {
+                for (int z = 0; z<headers.Length; z++)
+                {
+                    if (prop.ElementAt(i).Name == headers[z])
+                    {
+                        corretto = true;
+                    }
+                }
+            }
+            
+            if ( corretto )
+            {
+                foreach (var line in lines)
+                {
+                    int j = 0;
+                    string[] colons = line.Split(" ");
+                    entry= new T();
+                    foreach(var col in colons)
+                    {
+                        entry.GetType().GetProperty(headers[j]).SetValue(entry, Convert.ChangeType(col, entry.GetType().GetProperty(headers[j]).PropertyType));
+                        j++;
+                    }
+                    list.Add(entry);
+                }
+            }
+            
+
+            return list;
+        }
+
+
     }
 
     public class Persona
