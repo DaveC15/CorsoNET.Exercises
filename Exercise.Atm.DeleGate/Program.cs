@@ -5,6 +5,9 @@ namespace Exercise.Atm.DeleGate
 {
 
     public delegate void PrelievoAction(int am);
+    public delegate void DepositoAction(int am);
+    public delegate int SaldoAction();
+    public delegate int InteresseAction();
     internal class Program
     {
         static void Main(string[] args)
@@ -12,6 +15,9 @@ namespace Exercise.Atm.DeleGate
             Conto conto1 = new Conto() { country = Country.Italia};
             ATMGermania atmgermania = new ATMGermania();
             PrelievoAction prelievo = conto1.Prelievo;
+            DepositoAction deposito = conto1.Deposito;
+            SaldoAction saldo = conto1.SaldoRimasto;
+            InteresseAction interesse = conto1.InteressiMaturati;
             int amount = 0;
             int scelta;
             if (!conto1.status)
@@ -29,21 +35,21 @@ namespace Exercise.Atm.DeleGate
                     case 1:
                         Console.WriteLine("Quanto desideri depositare? ");
                         amount = Int32.Parse(Console.ReadLine());
-                        atmgermania.Deposito(conto1, amount);
+                        atmgermania.Deposito(deposito, amount);
                     break;
                     case 2:
                         Console.WriteLine("Quanto desideri prelevare? ");
                         amount = Int32.Parse(Console.ReadLine());
-                        atmgermania.Prelievo( amount, conto1);
+                        atmgermania.Prelievo(prelievo, amount);
                     break;
                     case 3:
                         Console.WriteLine("Ecco il saldo ");
-                        atmgermania.SaldoRimasto();
+                        atmgermania.SaldoRimasto(saldo);
                     break;
                     case 4:
                         Console.WriteLine("Ecco i tuoi interessi ");
-                        amount = Int32.Parse(Console.ReadLine());
-                        atmgermania.InteressiMaturati();
+                        
+                        atmgermania.InteressiMaturati(interesse);
                     break;
 
                 }
@@ -113,31 +119,27 @@ namespace Exercise.Atm.DeleGate
     {
         public Country countryATM = Country.Germania;
         
-        public void Deposito(Conto conto, int soldi)
+        public void Deposito(DepositoAction deposito, int soldi)
         {
-            
+            deposito(soldi);
             Console.WriteLine("Deposito effettuato");
         }
 
         public void Prelievo(PrelievoAction prelievo, int am)
         {
-            
-            Console.WriteLine("prelievo effettuato");
-        }
-        public void Prelievo(int am, Conto conto)
-        {
-            
+            prelievo(am);
             Console.WriteLine("prelievo effettuato");
         }
 
-        public void SaldoRimasto()
+        public void SaldoRimasto(SaldoAction saldo)
         {
-            
+            saldo();
             Console.WriteLine();
         }
 
-        public void InteressiMaturati()
+        public void InteressiMaturati(InteresseAction interesse)
         {
+            interesse();
             Console.WriteLine();
         }
 
