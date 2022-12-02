@@ -19,7 +19,7 @@ namespace Exercise.eventBank
                         ceoCheck(this, ceoEvent);
                     }
                 }
-                 
+                ceo = value;
             }
         }
     }
